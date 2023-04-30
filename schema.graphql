@@ -1,5 +1,42 @@
-type ExampleEntity @entity {
-  id: ID!
-  count: BigInt!
-  requestId: BigInt! # uint256
+
+type System @entity
+{
+    id: ID!
+    contract: Bytes
+    master: Bytes
+}
+
+type Arbitrator @entity
+{
+    id: ID!
+    operations: [Operation!] @derivedFrom(field: "arbitrator")
+    contracts: [Contract!] @derivedFrom(field: "arbitrator")
+}
+
+type Contract @entity
+{
+    id: ID!
+    arbitrator: Arbitrator!
+}
+
+type Operation @entity
+{
+    id: ID!
+    arbitrator: Arbitrator!
+    extraData: Bytes!
+}
+
+enum MasterOperation
+{
+    AddArbitrator,
+    AddOperation,
+    AddContract
+}
+
+type Request @entity
+{
+    id: ID!
+    operation: MasterOperation!
+    arbitrator: Arbitrator
+    manager: Bytes
 }

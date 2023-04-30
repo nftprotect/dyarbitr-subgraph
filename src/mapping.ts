@@ -1,6 +1,7 @@
 import
 {
-    BigInt
+    BigInt,
+    dataSource
 } from "@graphprotocol/graph-ts"
 import
 {
@@ -24,10 +25,50 @@ import
 } from "../generated/DyArbitratorRegistry/DyArbitratorRegistry"
 import
 {
-    ExampleEntity
+    System,
+    Arbitrator,
+    Contract,
+    Operation,
+    Request
 } from "../generated/schema"
 
+
+export function handleDeployed(event: Deployed): void
+{
+    let c = new System("0");
+    c.contract = dataSource.address();
+    c.save();
+}
+
+export function handleSetMasterArbitrator(event: SetMasterArbitrator): void
+{
+    let c = System.load("0") as System;
+    c.master = event.params.arbitratorProxy;
+    c.save();
+}
+
+export function handleSetMasterOperation(event: SetMasterOperation): void
+{
+    // not implemented yet
+}
+
 export function handleArbitratorAddRequested(event: ArbitratorAddRequested): void
+{
+}
+
+export function handleOperationsAddRequested(event: OperationsAddRequested): void
+{
+}
+
+export function handleContractsAddRequested(event: ContractsAddRequested): void
+{
+}
+
+export function handleDisputeAccepted(event: DisputeAccepted): void
+{
+}
+
+export function handleDisputeRejected(event: DisputeRejected): void
 {
 }
 
@@ -51,22 +92,6 @@ export function handleContractRemoved(event: ContractRemoved): void
 {
 }
 
-export function handleContractsAddRequested(event: ContractsAddRequested): void
-{
-}
-
-export function handleDeployed(event: Deployed): void
-{
-}
-
-export function handleDisputeAccepted(event: DisputeAccepted): void
-{
-}
-
-export function handleDisputeRejected(event: DisputeRejected): void
-{
-}
-
 export function handleOperationAdded(event: OperationAdded): void
 {
 }
@@ -76,17 +101,5 @@ export function handleOperationChanged(event: OperationChanged): void
 }
 
 export function handleOperationRemoved(event: OperationRemoved): void
-{
-}
-
-export function handleOperationsAddRequested(event: OperationsAddRequested): void
-{
-}
-
-export function handleSetMasterArbitrator(event: SetMasterArbitrator): void
-{
-}
-
-export function handleSetMasterOperation(event: SetMasterOperation): void
 {
 }
