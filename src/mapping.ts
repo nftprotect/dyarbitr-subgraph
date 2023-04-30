@@ -19,7 +19,6 @@ import
     OperationChanged,
     OperationRemoved,
     OperationsAddRequested,
-    OwnershipTransferred,
     SetMasterArbitrator,
     SetMasterOperation
 } from "../generated/DyArbitratorRegistry/DyArbitratorRegistry"
@@ -81,10 +80,6 @@ export function handleOperationRemoved(event: OperationRemoved): void
 }
 
 export function handleOperationsAddRequested(event: OperationsAddRequested): void
-{
-}
-
-export function handleOwnershipTransferred(event: OwnershipTransferred): void
 {
 }
 

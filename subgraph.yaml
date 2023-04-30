@@ -28,7 +28,6 @@ dataSources:
         - OperationChanged
         - OperationRemoved
         - OperationsAddRequested
-        - OwnershipTransferred
         - SetMasterArbitrator
         - SetMasterOperation
       abis:
@@ -63,8 +62,6 @@ dataSources:
           handler: handleOperationRemoved
         - event: OperationsAddRequested(indexed uint256)
           handler: handleOperationsAddRequested
-        - event: OwnershipTransferred(indexed address,indexed address)
-          handler: handleOwnershipTransferred
         - event: SetMasterArbitrator(address)
           handler: handleSetMasterArbitrator
         - event: SetMasterOperation(indexed uint256,bytes)
