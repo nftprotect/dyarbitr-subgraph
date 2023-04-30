@@ -11,6 +11,7 @@ type Arbitrator @entity
     id: ID!
     operations: [Operation!] @derivedFrom(field: "arbitrator")
     contracts: [Contract!] @derivedFrom(field: "arbitrator")
+    requests: [Request!] @derivedFrom(field: "arbitrator")
 }
 
 type Contract @entity
@@ -33,10 +34,18 @@ enum MasterOperation
     AddContract
 }
 
+enum Status
+{
+    InDuspute,
+    Accepted,
+    Rejected
+}
+
 type Request @entity
 {
     id: ID!
+    status: Status!
     operation: MasterOperation!
     arbitrator: Arbitrator
-    manager: Bytes
+    manager: Bytes!
 }
