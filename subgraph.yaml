@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
 description: Dynamic decentalized dispute resolution protocol for NFT Protect
 schema:
   file: ./schema.graphql
@@ -7,11 +7,11 @@ dataSources:
     name: DyArbitratorRegistry
     network: goerli
     source:
-      address: "0xB357D4E5715E252575437D7456Ca97030f8D73d6"
+      address: "0x25B083865dc5581aA71EF212fdC9A0ef5B9BB994"
       abi: DyArbitratorRegistry
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - ArbitratorAddRequested
