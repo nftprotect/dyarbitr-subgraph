@@ -1,0 +1,72 @@
+specVersion: 0.0.1
+description: Dynamic decentalized dispute resolution protocol for NFT Protect
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: DyArbitratorRegistry
+    network: goerli
+    source:
+      address: "0xB357D4E5715E252575437D7456Ca97030f8D73d6"
+      abi: DyArbitratorRegistry
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - ArbitratorAddRequested
+        - ArbitratorAdded
+        - ArbitratorDeleted
+        - ArbitratorManagerChanged
+        - ContractAdded
+        - ContractRemoved
+        - ContractsAddRequested
+        - Deployed
+        - DisputeAccepted
+        - DisputeRejected
+        - OperationAdded
+        - OperationChanged
+        - OperationRemoved
+        - OperationsAddRequested
+        - OwnershipTransferred
+        - SetMasterArbitrator
+        - SetMasterOperation
+      abis:
+        - name: DyArbitratorRegistry
+          file: ./abis/DyArbitratorRegistry.json
+      eventHandlers:
+        - event: ArbitratorAddRequested(indexed uint256)
+          handler: handleArbitratorAddRequested
+        - event: ArbitratorAdded(indexed address,string,address)
+          handler: handleArbitratorAdded
+        - event: ArbitratorDeleted(indexed address)
+          handler: handleArbitratorDeleted
+        - event: ArbitratorManagerChanged(indexed address,address)
+          handler: handleArbitratorManagerChanged
+        - event: ContractAdded(indexed address,indexed address)
+          handler: handleContractAdded
+        - event: ContractRemoved(indexed address,indexed address)
+          handler: handleContractRemoved
+        - event: ContractsAddRequested(indexed uint256)
+          handler: handleContractsAddRequested
+        - event: Deployed()
+          handler: handleDeployed
+        - event: DisputeAccepted(indexed uint256)
+          handler: handleDisputeAccepted
+        - event: DisputeRejected(indexed uint256)
+          handler: handleDisputeRejected
+        - event: OperationAdded(indexed address,indexed uint256,bytes)
+          handler: handleOperationAdded
+        - event: OperationChanged(indexed address,indexed uint256,bytes)
+          handler: handleOperationChanged
+        - event: OperationRemoved(indexed address,indexed uint256)
+          handler: handleOperationRemoved
+        - event: OperationsAddRequested(indexed uint256)
+          handler: handleOperationsAddRequested
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: SetMasterArbitrator(address)
+          handler: handleSetMasterArbitrator
+        - event: SetMasterOperation(indexed uint256,bytes)
+          handler: handleSetMasterOperation
+      file: ./src/mapping.ts
