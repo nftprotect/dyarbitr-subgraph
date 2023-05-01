@@ -54,26 +54,50 @@ export function handleSetMasterOperation(event: SetMasterOperation): void
 
 export function handleArbitratorAddRequested(event: ArbitratorAddRequested): void
 {
+    let r = new Request(event.params.requestId.toString());
+    r.status = "InDispute";
+    r.operation = "AddArbitrator";
+    r.manager = event.params.manager;
+    r.save();
 }
 
 export function handleOperationsAddRequested(event: OperationsAddRequested): void
 {
+    let r = new Request(event.params.requestId.toString());
+    r.status = "InDispute";
+    r.operation = "AddOperation";
+    r.manager = event.params.manager;
+    r.arbitrator = event.params.arbAddr.toString();
+    r.save();
 }
 
 export function handleContractsAddRequested(event: ContractsAddRequested): void
 {
+    let r = new Request(event.params.requestId.toString());
+    r.status = "InDispute";
+    r.operation = "AddContract";
+    r.manager = event.params.manager;
+    r.arbitrator = event.params.arbAddr.toString();
+    r.save();
 }
 
 export function handleDisputeAccepted(event: DisputeAccepted): void
 {
+    let r = Request.load(event.params.requestId.toString()) as Request;
+    r.status = "Accepted";
+    r.save();
 }
 
 export function handleDisputeRejected(event: DisputeRejected): void
 {
+    let r = Request.load(event.params.requestId.toString()) as Request;
+    r.status = "Rejected";
+    r.save();
 }
 
 export function handleArbitratorAdded(event: ArbitratorAdded): void
 {
+
 }
 
 export function handleArbitratorDeleted(event: ArbitratorDeleted): void
