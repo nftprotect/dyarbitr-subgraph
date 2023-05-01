@@ -40,7 +40,7 @@ enum MasterOperation
 
 enum Status
 {
-    InDuspute,
+    InDispute,
     Accepted,
     Rejected
 }
