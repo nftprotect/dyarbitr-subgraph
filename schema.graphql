@@ -48,8 +48,10 @@ enum Status
 type Request @entity
 {
     id: ID!
+    disputeID: BigInt!
     status: Status!
     operation: MasterOperation!
     arbitrator: Arbitrator
+    candidate: Bytes
     manager: Bytes!
 }

@@ -56,8 +56,10 @@ export function handleSetMasterOperation(event: SetMasterOperation): void
 export function handleArbitratorAddRequested(event: ArbitratorAddRequested): void
 {
     let r = new Request(event.params.requestId.toString());
+    r.disputeID = event.params.disputeId;
     r.status = "InDispute";
     r.operation = "AddArbitrator";
+    r.candidate = event.params.arbAddr;
     r.manager = event.params.manager;
     r.save();
 }
@@ -65,6 +67,7 @@ export function handleArbitratorAddRequested(event: ArbitratorAddRequested): voi
 export function handleOperationsAddRequested(event: OperationsAddRequested): void
 {
     let r = new Request(event.params.requestId.toString());
+    r.disputeID = event.params.disputeId;
     r.status = "InDispute";
     r.operation = "AddOperation";
     r.manager = event.params.manager;
@@ -75,6 +78,7 @@ export function handleOperationsAddRequested(event: OperationsAddRequested): voi
 export function handleContractsAddRequested(event: ContractsAddRequested): void
 {
     let r = new Request(event.params.requestId.toString());
+    r.disputeID = event.params.disputeId;
     r.status = "InDispute";
     r.operation = "AddContract";
     r.manager = event.params.manager;
