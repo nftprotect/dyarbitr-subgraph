@@ -20,11 +20,13 @@ type Contract @entity
 {
     id: ID!
     arbitrator: Arbitrator!
+    contract: Bytes!
 }
 
 type Operation @entity
 {
     id: ID!
+    operation: BigInt!
     arbitrator: Arbitrator!
     extraData: Bytes!
 }
