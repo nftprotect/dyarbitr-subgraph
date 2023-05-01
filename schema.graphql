@@ -9,6 +9,8 @@ type System @entity
 type Arbitrator @entity
 {
     id: ID!
+    name: String!
+    manager: Bytes!
     operations: [Operation!] @derivedFrom(field: "arbitrator")
     contracts: [Contract!] @derivedFrom(field: "arbitrator")
     requests: [Request!] @derivedFrom(field: "arbitrator")
