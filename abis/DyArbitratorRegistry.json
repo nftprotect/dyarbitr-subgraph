@@ -115,10 +115,10 @@
 				"type": "address"
 			},
 			{
-				"indexed": true,
-				"internalType": "contract IArbitrableProxy",
-				"name": "arbAddr",
-				"type": "address"
+				"indexed": false,
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
 			}
 		],
 		"name": "ArbitratorAddRequested",
