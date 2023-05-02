@@ -52,6 +52,6 @@ type Request @entity
     status: Status!
     operation: MasterOperation!
     arbitrator: Arbitrator
-    candidate: Bytes
+    name: String
     manager: Bytes!
 }

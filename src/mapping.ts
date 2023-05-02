@@ -59,7 +59,7 @@ export function handleArbitratorAddRequested(event: ArbitratorAddRequested): voi
     r.disputeID = event.params.disputeId;
     r.status = "InDispute";
     r.operation = "AddArbitrator";
-    r.candidate = event.params.arbAddr;
+    r.name = event.params.name;
     r.manager = event.params.manager;
     r.save();
 }

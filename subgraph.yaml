@@ -35,7 +35,7 @@ dataSources:
         - name: DyArbitratorRegistry
           file: ./abis/DyArbitratorRegistry.json
       eventHandlers:
-        - event: ArbitratorAddRequested(indexed uint256,uint256,address,indexed address)
+        - event: ArbitratorAddRequested(indexed uint256,uint256,address,string)
           handler: handleArbitratorAddRequested
         - event: ArbitratorAdded(indexed address,string,address)
           handler: handleArbitratorAdded
