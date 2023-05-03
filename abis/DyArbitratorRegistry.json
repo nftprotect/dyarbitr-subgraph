@@ -665,6 +665,60 @@
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "requestId",
+				"type": "uint256"
+			}
+		],
+		"name": "getRequest",
+		"outputs": [
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "m",
+				"type": "address"
+			},
+			{
+				"internalType": "enum DyArbitratorRegistry.MasterOperations",
+				"name": "op",
+				"type": "uint8"
+			},
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "arb",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "manager",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes",
+				"name": "operations",
+				"type": "bytes"
+			},
+			{
+				"internalType": "bytes[]",
+				"name": "extraData",
+				"type": "bytes[]"
+			},
+			{
+				"internalType": "bytes",
+				"name": "contracts",
+				"type": "bytes"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "master",
 		"outputs": [

@@ -7,8 +7,8 @@ dataSources:
     name: DyArbitratorRegistry
     network: goerli
     source:
-      address: "0x80c48dbaf44a443155bd76050b15b14239ed37bc"
-      startBlock: 8932768
+      address: "0x6620883168AD86d3b88E0C1a3eF0b3Ce4284c17d"
+      startBlock: 8935625
       abi: DyArbitratorRegistry
     mapping:
       kind: ethereum/events
