@@ -1,94 +1,5 @@
 [
 	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "contract IArbitrableProxy",
-				"name": "arb",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256[]",
-				"name": "operations",
-				"type": "uint256[]"
-			},
-			{
-				"internalType": "bytes[]",
-				"name": "extraData",
-				"type": "bytes[]"
-			},
-			{
-				"internalType": "address[]",
-				"name": "contracts",
-				"type": "address[]"
-			},
-			{
-				"internalType": "string",
-				"name": "evidence",
-				"type": "string"
-			}
-		],
-		"name": "addArbitrator",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "contract IArbitrableProxy",
-				"name": "arbAddr",
-				"type": "address"
-			},
-			{
-				"internalType": "address[]",
-				"name": "contracts",
-				"type": "address[]"
-			},
-			{
-				"internalType": "string",
-				"name": "evidence",
-				"type": "string"
-			}
-		],
-		"name": "addContracts",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "contract IArbitrableProxy",
-				"name": "arbAddr",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256[]",
-				"name": "operations",
-				"type": "uint256[]"
-			},
-			{
-				"internalType": "bytes[]",
-				"name": "extraData",
-				"type": "bytes[]"
-			},
-			{
-				"internalType": "string",
-				"name": "evidence",
-				"type": "string"
-			}
-		],
-		"name": "addOperations",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
@@ -115,10 +26,10 @@
 				"type": "address"
 			},
 			{
-				"indexed": true,
-				"internalType": "contract IArbitrableProxy",
-				"name": "arbAddr",
-				"type": "address"
+				"indexed": false,
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
 			}
 		],
 		"name": "ArbitratorAddRequested",
@@ -180,47 +91,6 @@
 		],
 		"name": "ArbitratorManagerChanged",
 		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "contract IArbitrableProxy",
-				"name": "arbAddr",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "newManager",
-				"type": "address"
-			}
-		],
-		"name": "changeArbitratorManager",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "contract IArbitrableProxy",
-				"name": "arbAddr",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256[]",
-				"name": "operations",
-				"type": "uint256[]"
-			},
-			{
-				"internalType": "bytes[]",
-				"name": "extraData",
-				"type": "bytes[]"
-			}
-		],
-		"name": "changeOperations",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	},
 	{
 		"anonymous": false,
@@ -292,19 +162,6 @@
 		"type": "event"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "contract IArbitrableProxy",
-				"name": "arbAddr",
-				"type": "address"
-			}
-		],
-		"name": "deleteArbitrator",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"anonymous": false,
 		"inputs": [],
 		"name": "Deployed",
@@ -335,19 +192,6 @@
 		],
 		"name": "DisputeRejected",
 		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "disputeId",
-				"type": "uint256"
-			}
-		],
-		"name": "fetchRuling",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	},
 	{
 		"anonymous": false,
@@ -469,72 +313,6 @@
 		"type": "event"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "contract IArbitrableProxy",
-				"name": "arbAddr",
-				"type": "address"
-			},
-			{
-				"internalType": "address[]",
-				"name": "contracts",
-				"type": "address[]"
-			}
-		],
-		"name": "removeContracts",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "contract IArbitrableProxy",
-				"name": "arbAddr",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256[]",
-				"name": "operations",
-				"type": "uint256[]"
-			}
-		],
-		"name": "removeOperations",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "contract IArbitrableProxy",
-				"name": "arb",
-				"type": "address"
-			},
-			{
-				"internalType": "bytes[]",
-				"name": "extraData",
-				"type": "bytes[]"
-			},
-			{
-				"internalType": "string[]",
-				"name": "evidence",
-				"type": "string[]"
-			}
-		],
-		"name": "setMaster",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -569,14 +347,90 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "newOwner",
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "arb",
 				"type": "address"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "operations",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "bytes[]",
+				"name": "extraData",
+				"type": "bytes[]"
+			},
+			{
+				"internalType": "address[]",
+				"name": "contracts",
+				"type": "address[]"
+			},
+			{
+				"internalType": "string",
+				"name": "evidence",
+				"type": "string"
 			}
 		],
-		"name": "transferOwnership",
+		"name": "addArbitrator",
 		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "arbAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "address[]",
+				"name": "contracts",
+				"type": "address[]"
+			},
+			{
+				"internalType": "string",
+				"name": "evidence",
+				"type": "string"
+			}
+		],
+		"name": "addContracts",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "arbAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "operations",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "bytes[]",
+				"name": "extraData",
+				"type": "bytes[]"
+			},
+			{
+				"internalType": "string",
+				"name": "evidence",
+				"type": "string"
+			}
+		],
+		"name": "addOperations",
+		"outputs": [],
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -638,6 +492,47 @@
 				"internalType": "contract IArbitrableProxy",
 				"name": "arbAddr",
 				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "newManager",
+				"type": "address"
+			}
+		],
+		"name": "changeArbitratorManager",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "arbAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "operations",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "bytes[]",
+				"name": "extraData",
+				"type": "bytes[]"
+			}
+		],
+		"name": "changeOperations",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "arbAddr",
+				"type": "address"
 			}
 		],
 		"name": "checkArbitrator",
@@ -678,6 +573,19 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "arbAddr",
+				"type": "address"
+			}
+		],
+		"name": "deleteArbitrator",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -744,6 +652,19 @@
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "disputeId",
+				"type": "uint256"
+			}
+		],
+		"name": "fetchRuling",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "master",
 		"outputs": [
@@ -805,6 +726,85 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "arbAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "address[]",
+				"name": "contracts",
+				"type": "address[]"
+			}
+		],
+		"name": "removeContracts",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "arbAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "operations",
+				"type": "uint256[]"
+			}
+		],
+		"name": "removeOperations",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IArbitrableProxy",
+				"name": "arb",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes[]",
+				"name": "extraData",
+				"type": "bytes[]"
+			},
+			{
+				"internalType": "string[]",
+				"name": "evidence",
+				"type": "string[]"
+			}
+		],
+		"name": "setMaster",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
