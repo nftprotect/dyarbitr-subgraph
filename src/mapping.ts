@@ -64,6 +64,17 @@ export function handleArbitratorAddRequested(event: ArbitratorAddRequested): voi
     r.save();
 }
 
+function arbitratorName(arb: String): String | null
+{
+    let a = Arbitrator.load(arb);
+    if (a == null)
+    {
+        return null;
+    }
+    return (a as Arbitrator).name;
+}
+
+
 export function handleOperationsAddRequested(event: OperationsAddRequested): void
 {
     let r = new Request(event.params.requestId.toString());
@@ -72,6 +83,7 @@ export function handleOperationsAddRequested(event: OperationsAddRequested): voi
     r.operation = "AddOperation";
     r.manager = event.params.manager;
     r.arbitrator = event.params.arbAddr.toHex();
+    r.name = arbitratorName(r.arbitrator as String);
     r.save();
 }
 
@@ -83,6 +95,7 @@ export function handleContractsAddRequested(event: ContractsAddRequested): void
     r.operation = "AddContract";
     r.manager = event.params.manager;
     r.arbitrator = event.params.arbAddr.toHex();
+    r.name = arbitratorName(r.arbitrator as String);
     r.save();
 }
 
